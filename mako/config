@@ -1,0 +1,9 @@
+background-color=#181037e6
+border-color=#882978
+font=monospace 12
+border-radius=10
+width=400
+height=100
+[app-name="NetworkManager Applet"]
+invisible=1
+

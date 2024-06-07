@@ -1,0 +1,38 @@
+set recolor "true"
+set recolor-keephue "true"
+set default-bg rgba(24,16,55,0.8)
+set recolor-lightcolor rgba(9,8,33,0)
+set recolor-darkcolor rgba(255,255,255,1)
+set adjust-open "width"
+set page-padding 10
+set completion-bg rgba(9,8,33,0)
+set completion-fg "#BB6CAF"
+set completion-group-bg rgba(29,19,69,0.5)
+set completion-highlight-bg "#802471"
+set completion-highlight-fg rgba(255,255,255,1)
+set inputbar-bg rgba(9,8,33,1)
+set inputbar-fg "#ff8fee"
+set notification-bg "#802471"
+set notification-fg rgba(255,255,255,1)
+set statusbar-bg rgba(9,8,33,1)
+set highlight-color "#ff8fee"
+set index-bg rgba(9,8,33,0)
+set index-fg "#ff8fee"
+set index-active-bg "#802471"
+set index-active-fg rgba(255,255,255,1)
+
+#return to normal
+map <F1> focus_inputbar ":set recolor-lightcolor rgba(255,255,255,1)"
+map <F2> focus_inputbar ":set recolor-darkcolor rgba(0,0,0,1)"
+map ! feedkeys "<F1><Return><F2><Return>"
+
+#return to cool
+map <F3> focus_inputbar  ":source"
+map @ feedkeys "<F3><Return>"
+
+map <C--> zoom out
+map <C-=> zoom in
+unmap -
+unmap +
+
+

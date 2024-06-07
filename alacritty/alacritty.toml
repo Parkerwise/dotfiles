@@ -1,0 +1,86 @@
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "#303134"
+blue = "#6C87BB"
+cyan = "#779be1"
+green = "#6CBB78"
+magenta = "#BB6CAF"
+red = "#EB3D66"
+white = "#ffffff"
+yellow = "#E1BD77"
+
+[colors.cursor]
+cursor = "#d8dee9"
+text = "#2e3440"
+
+[colors.normal]
+black = "#000000"
+blue = "#4D6CA7"
+cyan = "#4D7CD8"
+green = "#4DA75B"
+magenta = "#934592"
+red = "#DE1746"
+white = "#E6E6E6"
+yellow = "#D8A94D"
+
+[colors.primary]
+background = "#181037"
+dim_foreground = "#a5abb6"
+foreground = "#d8dee9"
+
+[colors.search.matches]
+background = "#88c0d0"
+foreground = "CellBackground"
+
+[colors.selection]
+background = "#4c566a"
+text = "CellForeground"
+
+[colors.vi_mode_cursor]
+cursor = "#d8dee9"
+text = "#2e3440"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 12.0
+
+[font.bold]
+family = "Source Code Pro"
+style = "Bold"
+
+[font.bold_italic]
+family = "Source Code Pro"
+style = "Bold Italic"
+
+[font.italic]
+family = "Source Code Pro"
+style = "Italic"
+
+[font.normal]
+family = "SauceCodePro Nerd Font"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 1
+
+[scrolling]
+history = 5000
+
+[window]
+decorations = "none"
+dynamic_padding = false
+opacity = 0.8
+title = "Alacritty"
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.padding]
+x = 6
+y = 6
