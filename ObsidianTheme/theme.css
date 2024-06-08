@@ -1,0 +1,62 @@
+body {
+	--radius-s: 4px;
+	--radius-m: 8px;
+	--radius-l: 10px;
+	--radius-xl:16px;
+	--input-radius: 8px;
+	--tab-radius-active: 4px;
+	--checkbox-radius: 0px;
+	--toggle-radius: 32px;
+	--toggle-thumb-radius: 10px;
+	--slider-thumb-radius: 10px;		
+}
+
+.workspace-tab-header.is-active::before, .workspace-tab-header.is-active::after {
+	display: none;
+}
+
+svg * {
+	stroke-linecap: square;
+	stroke-linejoin: miter;
+	rx: 0;
+	ry: 0;
+}
+
+.menu {
+	padding: var(--size-2-1);
+}
+
+.menu-item {
+	padding: var(--size-4-1) var(--size-4-2);
+}
+
+.menu-separator {
+	margin: var(--size-2-1) calc(var(--size-2-1) * -1);
+}
+
+.theme-dark {
+  --background-primary: rgba(24,16,55,0.3); 
+  --background-secondary: rgba(24,16,55,0.7); 
+  --text-muted: #ffffff;
+  --text-faint: #ff8fee;
+  --background-modifier-border: #882978;
+  --background-secondary-alt: #882978;
+  --interactive-normal: #1a213e;
+  --interactive-accent: #882978;
+  --interactive-hover: #A74D99;
+  --background-modifier-form-field: #1a213e;
+  --checkbox-marker-color: rgba(24,16,55,1);
+}
+
+div.suggestion-container, div.vertical-tab-content, div.vertical-tab-header,div.markdown-preview-view, div.menu, div.modal{
+	background: rgba(24,16,55,1);
+}
+
+
+/* Make side-bar and top-bar transparent 
+div.app-container, div.horizontal-main-container, div.workspace, div.workspace-ribbon, div.workspace-ribbon::before, div.side-dock-ribbon, div.mod-left, div.workspace-split, div.workspace-tabs, div.workspace-tab-header-container, div.workspace-tab-container, div.workspace-leaf { 
+    background: #00000000 !important; 
+    background-color: #00000000 !important; 
+    background-image: none !important; 
+    --tab-container-background: #00000000 !important; */
+
