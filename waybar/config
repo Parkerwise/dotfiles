@@ -73,8 +73,8 @@
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
-            "activated": "",
-            "deactivated": ""
+            "activated": "",
+            "deactivated": ""
         }
     },
     "tray": {
@@ -132,8 +132,8 @@
         // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}%  {format_source}",
-        "format-bluetooth-muted": "<span font_desc='Font Awesome 6 Free'>  {icon} {format_source}",
-        "format-muted": "<span font_desc='Font Awesome 6 Free'> </span>{format_source}",
+        "format-bluetooth-muted": "<span font_desc='Font Awesome 6 Free'>  {icon} {format_source}",
+        "format-muted": "<span font_desc='Font Awesome 6 Free'> </span>{format_source}",
         "format-source": "",
         "format-source-muted": "",
         "format-icons": {

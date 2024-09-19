@@ -4,6 +4,6 @@ font=monospace 12
 border-radius=10
 width=400
 height=100
+icons=0
 [app-name="NetworkManager Applet"]
 invisible=1
-

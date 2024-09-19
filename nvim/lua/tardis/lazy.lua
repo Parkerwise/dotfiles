@@ -10,8 +10,10 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
+
 local plugins = {
 'nvim-telescope/telescope.nvim',
+'sindrets/diffview.nvim',
 'nvim-lua/plenary.nvim',
 'lervag/vimtex',
 'mbbill/undotree',
@@ -23,6 +25,7 @@ local plugins = {
 	build = "make install_jsregexp"
 },
 "williamboman/mason.nvim",
+{ 'glacambre/firenvim', build = ":call firenvim#install(0)" },
 "vim-pandoc/vim-pandoc-syntax",
 "williamboman/mason-lspconfig.nvim",
 "neovim/nvim-lspconfig",
@@ -30,13 +33,15 @@ local plugins = {
 "hrsh7th/cmp-nvim-lsp",
 "nvim-tree/nvim-tree.lua",
 'nvim-tree/nvim-web-devicons',
+"vhyrro/luarocks.nvim",
 "onsails/lspkind.nvim",
 "theRealCarneiro/hyprland-vim-syntax",
 {
     'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' }
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+	disables_filetypes = {'markdown'}
 },
-'ixru/nvim-markdown',
+--'ixru/nvim-markdown',
 {
 "nvim-treesitter/nvim-treesitter",
 config=function()
@@ -74,6 +79,25 @@ end,
     -- tag = "*",
     dependencies = { "nvim-lua/plenary.nvim" },
 },
+'ThePrimeagen/vim-be-good',
+{
+  "epwalsh/obsidian.nvim",
+  version = "*",  -- recommended, use latest release instead of latest commit
+  lazy = true,
+  ft = "markdown",
+  -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
+  -- event = {
+  --   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
+  --   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
+  --   "BufReadPre path/to/my-vault/**.md",
+  --   "BufNewFile path/to/my-vault/**.md",
+  -- },
+  dependencies = {
+    -- Required.
+    "nvim-lua/plenary.nvim",
+  },
+'duane9/nvim-rg'
+}
 }
 local opts={}
 require("lazy").setup(plugins, opts)
