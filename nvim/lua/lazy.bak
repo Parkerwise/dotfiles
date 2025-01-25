@@ -36,12 +36,8 @@ local plugins = {
 "vhyrro/luarocks.nvim",
 "onsails/lspkind.nvim",
 "theRealCarneiro/hyprland-vim-syntax",
-{
-    'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-	disables_filetypes = {'markdown'}
-},
---'ixru/nvim-markdown',
+'nvim-tree/nvim-web-devicons',
+'nvim-lualine/lualine.nvim',
 {
 "nvim-treesitter/nvim-treesitter",
 config=function()
@@ -97,7 +93,7 @@ end,
     "nvim-lua/plenary.nvim",
   },
 'duane9/nvim-rg'
-}
+},
 }
 local opts={}
 require("lazy").setup(plugins, opts)

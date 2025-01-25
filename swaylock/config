@@ -1,6 +1,7 @@
-image=~/Pictures/tardis.png
+image=~/pictures/tardis.png
 scaling=fill
 fade-in=0.2
+hide-keyboard-layout
 
 
 ring-color=00000000

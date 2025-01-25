@@ -52,7 +52,8 @@ local greek= {
 {"^-", "⁻"},
 {"_8", "₈"},
 {"_9", "₉"},
-{"sun", "☉"}}
+{"sun", "☉"},
+{"h bar","ℏ"}}
 
 
 -- our picker function: colors

@@ -9,7 +9,7 @@
     "modules-center":  ["clock"],
     "clock": {
     },
-    "modules-right": ["mpd", "idle_inhibitor", "pulseaudio", "cpu", "memory", "temperature", "backlight", "keyboard-state", "sway/language", "battery", "battery#bat2", "tray"],
+    "modules-right": ["mpd", "idle_inhibitor", "pulseaudio", "cpu", "memory", "temperature", "backlight", "keyboard-state", "hyprland/language", "battery", "battery#bat2", "tray"],
     // Modules configuration
      "hyprland/workspaces": {
 
@@ -34,6 +34,17 @@
             "unlocked": ""
         }
     },
+	 "hyprland/language": {
+
+	"format": "{}",
+
+	"format-es": "ES",
+
+
+	"format-en": "US",
+
+
+	},
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -158,6 +169,6 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    }
-}
+    },
 
+}
