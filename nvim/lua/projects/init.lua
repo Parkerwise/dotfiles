@@ -1,2 +1,5 @@
 local keyboard_switch = require("projects.xkb-switch")
+require("projects.characters")
+local date_time = require("projects.date_time")
 keyboard_switch.setup()
+date_time.setup()

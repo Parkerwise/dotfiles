@@ -14,10 +14,14 @@ end
 local saved_layout = get_current_layout()
 local function switch_to_english()
 	io.popen("hyprctl switchxkblayout at-translated-set-2-keyboard 0"):close()
+	io.popen("hyprctl switchxkblayout keebio-iris-ce-rev.-1 0"):close()
 end
 
 local function switch_back()
-	io.popen("hyprctl switchxkblayout at-translated-set-2-keyboard ".. saved_layout):close()
+	local laptop = saved_layout:sub(1,1)
+	local keeb = saved_layout:sub(2,2)
+	io.popen("hyprctl switchxkblayout at-translated-set-2-keyboard ".. laptop):close()
+	io.popen("hyprctl switchxkblayout keebio-iris-ce-rev.-1 ".. keeb):close()
 end
 
 	-- print(saved_layout)

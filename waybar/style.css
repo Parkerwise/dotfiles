@@ -1,14 +1,23 @@
 * {
     font-family:  Roboto, noto-flags,Fontawesome, Helvetica, Arial, sans-serif; 
-    font-size: 13px;
+    /*font-family: "JetBrainsMono Nerd Font,JetBrainsMono NF" ;*/
+    all: initial;
+    font-size: 11px;
+    /*min-height: 5px;*/
+    padding: 0;
+    margin: 0;
+    /*margin-bottom: 10;*/
 }
 
 window#waybar {
     background-color: transparent;
     border-bottom: transparent;
+    padding: 0;
+    margin: 0;
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
+	margin: 1px;
 }
 
 window#waybar.hidden {
@@ -53,8 +62,8 @@ button:hover {
     padding: 0 5px;
     background-color: rgba(9,8,33,0.5);
     color: #ffffff;
-    border-radius:3px;
-    margin-top:5px; 
+    /*border-radius:3px;*/
+    margin-top: 1px;
     margin-left:3px;
 }
 
@@ -74,7 +83,7 @@ button:hover {
 }
 
 #mode {
-    background-color: transparent;
+    background-color: #17deaf;
     border-bottom: 3px solid #ffffff;
 }
 
@@ -118,21 +127,22 @@ button:hover {
 #clock {
     background-color: rgba(9,8,33,0.5);
     border-radius: 10px;
-    margin-top:5px;
+    /*margin-top:5px;*/
 }
 
 #battery {
    background-color: rgba(9,8,33,0.5);
     border-radius: 10px;
     margin-left:3px;
-    margin-top:5px;
+    margin-right:3px;
+    /*margin-top:5px;*/
     }
 #language {
    background-color: rgba(9,8,33,0.5);
     border-radius: 10px;
 	font-family:noto-flags;
     margin-left:3px;
-    margin-top:5px;
+    /*margin-top:5px;*/
     min-width: 20px;
     }
 
@@ -140,7 +150,7 @@ button:hover {
    background-color: rgba(9,8,33,0.5);
     border-radius: 10px;
     margin-left:3px;
-    margin-top:5px;
+    /*margin-top:5px;*/
     }
 #custom-slack.active {
     background-color: #8D2E7E;
@@ -150,7 +160,7 @@ button:hover {
     background-color: rgba(141,46,126,1);
     border-radius:10px;
     margin-left:3px;
-    margin-top:5px;
+    /*margin-top:5px;*/
 
 }
 
@@ -166,7 +176,7 @@ button:hover {
     color: #ffffff;
     border-radius:10px;
     margin-left:3px;
-    margin-top:5px;
+    /*margin-top:5px;*/
     /*animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -182,28 +192,28 @@ label:focus {
     background-color: rgba(9,8,33,0.5);
     border-radius: 10px;
     margin-left:3px;
-    margin-top: 5px;
+    /*margin-top: 5px;*/
     }
 
 #memory {
     background-color: rgba(9,8,33,0.5);
     border-radius: 10px;
     margin-left:3px;
-    margin-top: 5px;
+    /*margin-top: 5px;*/
 }
 
 #disk {
     background-color: rgba(9,8,33,0.5);
     border-radius: 10px;
     margin-left:3px;
-    margin-top: 5px;
+    /*margin-top: 5px;*/
 }
 
 #backlight {
     background-color: rgba(9,8,33,0.5);
     border-radius: 10px;
     margin-left:3px;
-    margin-top: 5px;
+    /*margin-top: 5px;*/
 }
 
 #network {
@@ -218,15 +228,21 @@ label:focus {
     background-color: rgba(9,8,33,0.5);
     border-radius: 10px;
     margin-left:3px;
-    margin-top: 5px;
+    /*margin-top: 5px;*/
 }
-
-#pulseaudio.muted {
+#pulseaudio.input.source-muted {
     background-color: rgba(141,46,126,1);
     color: #ffffff;
     border-radius:10px;
     margin-left:3px;
-    margin-top:5px;
+    /*margin-top:5px;*/
+}
+#pulseaudio.output.muted {
+    background-color: rgba(141,46,126,1);
+    color: #ffffff;
+    border-radius:10px;
+    margin-left:3px;
+    /*margin-top:5px;*/
 }
 
 #wireplumber {
@@ -256,14 +272,14 @@ label:focus {
     background-color: rgba(9,8,33,0.5);
     border-radius: 10px;
     margin-left:3px;
-    margin-top: 5px;
+    /*margin-top: 5px;*/
 }
 
 #temperature.critical {
     background-color: #eb4d4b;
     border-radius:10px;
     margin-left:3px;
-    margin-top: 5px;
+    /*margin-top: 5px;*/
 }
 
 #tray {
@@ -271,7 +287,7 @@ label:focus {
     border-radius:10px;
     margin-left:3px;
 	margin-right:3px;
-    margin-top: 5px;
+    /*margin-top: 5px;*/
 /*2980b9*/
 }
 
@@ -288,7 +304,7 @@ label:focus {
     background-color: rgba(9,8,33,0.5);
     border-radius:10px;
     margin-left:3px;
-    margin-top: 5px;
+    /*margin-top: 5px;*/
 }
 
 #idle_inhibitor.activated {
@@ -296,7 +312,7 @@ label:focus {
     color: #ffffff;
      border-radius:10px;
     margin-left:3px;
-    margin-top: 5px;
+    /*margin-top: 5px;*/
 
 }
 

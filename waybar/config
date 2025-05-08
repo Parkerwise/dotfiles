@@ -1,7 +1,7 @@
 {
      "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 20, // Waybar height (to be removed for auto height)
+    // "height": 2, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
@@ -9,7 +9,9 @@
     "modules-center":  ["clock"],
     "clock": {
     },
-    "modules-right": ["mpd", "idle_inhibitor", "pulseaudio", "cpu", "memory", "temperature", "backlight", "keyboard-state", "hyprland/language", "battery", "battery#bat2", "tray"],
+	// took out memory and cpu
+    "modules-right": ["mpd", "idle_inhibitor", "pulseaudio#output","pulseaudio#input",  "backlight", "keyboard-state", "hyprland/language", "battery", "battery#bat2", "tray"],
+	"start_hidden": true,
     // Modules configuration
      "hyprland/workspaces": {
 
@@ -89,7 +91,7 @@
         }
     },
     "tray": {
-        // "icon-size": 21,
+        "icon-size": 21,
         "spacing": 10
     },
 
@@ -132,21 +134,26 @@
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        //"format-icons": ["", "", "", "", ""]
+		// "format-icons": ["", "", "", "", "", "", "", "","", ""], 
     },
     "battery#bat2": {
         "bat": "BAT2"
     },
 
 
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}%  {format_source}",
-        "format-bluetooth-muted": "<span font_desc='Font Awesome 6 Free'>  {icon} {format_source}",
-        "format-muted": "<span font_desc='Font Awesome 6 Free'> </span>{format_source}",
+    "pulseaudio#input": {
+        "format": "{format_source}",
         "format-source": "",
-        "format-source-muted": "",
+        "format-source-muted": "󰍭",
+        "on-click": "pavucontrol -t 4",
+    },
+    "pulseaudio#output": {
+        "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon}",
+        "format-muted": "󰖁",
+        "format-bluetooth": "{volume}%  ",
+        "format-bluetooth-muted": "{volume}% 󰟎 ",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -154,9 +161,9 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": ["", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol -t 3",
     },
     "custom/media": {
         "format": "{icon} {}",

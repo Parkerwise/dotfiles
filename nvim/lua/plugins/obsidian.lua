@@ -1,7 +1,7 @@
 return {
 	"epwalsh/obsidian.nvim",
 	version = "*",  -- recommended, use latest release instead of latest commit
-	lazy = true,
+	lazy = false,
 	ft = "markdown",
 	-- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
 	-- event = {
@@ -13,8 +13,10 @@ return {
 	dependencies = {
 	-- Required.
 		"nvim-lua/plenary.nvim",
+		"hrsh7th/nvim-cmp",
 	},
 	config = function()
+	---@diagnostic disable missing-fields      
 require("obsidian").setup(
 	{
 	  -- A list of workspace names, paths, and configuration overrides.
@@ -33,6 +35,7 @@ require("obsidian").setup(
 	  -- levels defined by "vim.log.levels.*".
 	  log_level = vim.log.levels.INFO,
 
+	---@diagnostic disable-next-line missing-fields      
 	  daily_notes = {
 		-- Optional, if you keep daily notes in a separate directory.
 		folder = "/journal/daily",
@@ -43,6 +46,7 @@ require("obsidian").setup(
 	  },
 
 	  -- Optional, completion of wiki links, local markdown links, and tags using nvim-cmp.
+	---@diagnostic disable-next-line missing-fields      
 	  completion = {
 		-- Set to false to disable completion.
 		nvim_cmp = true,
@@ -52,6 +56,7 @@ require("obsidian").setup(
 
 	  -- Optional, configure key mappings. These are the defaults. If you don't want to set any keymappings this
 	  -- way then set 'mappings = {}'.
+	---@diagnostic disable-next-line missing-fields      
 	  mappings = {
 		-- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
 		["gf"] = {
@@ -61,12 +66,12 @@ require("obsidian").setup(
 		  opts = { noremap = false, expr = true, buffer = true },
 		},
 		-- Toggle check-boxes.
-		["<leader>ch"] = {
-		  action = function()
-			return require("obsidian").util.toggle_checkbox()
-		  end,
-		  opts = { buffer = true },
-		},
+		-- ["<cr>"] = {
+		--   action = function()
+		-- 	return require("obsidian").util.toggle_checkbox()
+		--   end,
+		--   opts = { buffer = true },
+		-- },
 		-- Smart action depending on context, either follow link or toggle checkbox.
 		["<cr>"] = {
 		  action = function()
@@ -74,7 +79,7 @@ require("obsidian").setup(
 		  end,
 		  opts = { buffer = true, expr = true },
 		}
-	  },
+		 },
 
 	  -- Where to put new notes. Valid options are
 	  --  * "current_dir" - put new notes in same directory as the current buffer.
@@ -167,11 +172,16 @@ require("obsidian").setup(
 		date_format = "%Y-%m-%d",
 		time_format = "%H:%M",
 		-- A map for custom variables, the key should be the variable and the value a function
+					--
+					--
 		substitutions = {
-			schedule = function()
+				schedule = function()
 				-- os.execute("calcurse-caldav > /dev/null 2>&1")
-				local handle = io.popen('calcurse -d1 --format-recur-apt "- [ ] %(start:%I:%M) -> %(end:%I:%M)| %m\n" --format-apt "- [ ] %(start:%I:%M) -> %(end:%I:%M)| %m\n"')
+				local handle = io.popen('calcurse -d1 --format-recur-apt "- [a] %(start:%I:%M %p) -> %(end:%I:%M %p)| %m\n" --format-apt "- [a] %(start:%I:%M %p) -> %(end:%I:%M %p)| %m\n"')
 				--[[
+				-- 
+				-- 
+				--  
 				local result = handle:read("*a")
 				local s = string.gsub(result, " %- ", "%- %[ %] ")
 				s = string.gsub(s, "\n\t", "| ")
@@ -227,6 +237,7 @@ require("obsidian").setup(
 	  open_notes_in = "current",
 
 	  -- Optional, define your own callbacks to further customize behavior.
+	---@diagnostic disable-next-line missing-fields      
 	  callbacks = {
 		-- Runs at the end of `require("obsidian").setup()`.
 		---@param client obsidian.Client
@@ -263,8 +274,12 @@ require("obsidian").setup(
 		checkboxes = {
 		  -- NOTE: the 'char' value has to be a single character, and the highlight groups are defined below.
 		  [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
+		  ["-"] = { char = "", hl_group = "ObsidianProgress" },
 		  ["x"] = { char = "", hl_group = "ObsidianDone" },
+		  ["b"] = { char = " ", hl_group = "ObsidianPast" },
+		  ["a"] = { char = "󰄱 ", hl_group = "ObsidianFuture" },
 		  -- Replace the above with this if you don't have a patched font:
+		  -- ["F"] = { char = " ", hl_group = "ObsidianFuture" },
 		  -- [" "] = { char = "☐", hl_group = "ObsidianTodo" },
 		  -- ["x"] = { char = "✔", hl_group = "ObsidianDone" },
 
@@ -281,8 +296,11 @@ require("obsidian").setup(
 		block_ids = { hl_group = "ObsidianBlockID" },
 		hl_groups = {
 		  -- The options are passed directly to `vim.api.nvim_set_hl()`. See `:help nvim_set_hl`.
-		  ObsidianTodo = { bold = true, fg = "#934592" },
-		  ObsidianDone = { bold = true, fg = "#934592" },
+		  ObsidianTodo = { bold = true, fg = "#EB3D66" },
+		  ObsidianFuture= { bold = true, fg = "#934592" },
+		  ObsidianPast= { bold = true, fg = "#934592" },
+		  ObsidianDone = { bold = true, fg = "#6CBB78" },
+		  ObsidianProgress = { bold = true, fg = "#E1BD77" },
 		  ObsidianBullet = { bold = true, fg = "#934592" },
 		  ObsidianRefText = { underline = true, fg = "#934592" },
 		  ObsidianExtLinkIcon = { fg = "#934592" },

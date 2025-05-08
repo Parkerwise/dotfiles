@@ -1,6 +1,8 @@
 local set = vim.opt -- set options
 vim.hl = vim.highlight
 set.nrformats = {"bin", "hex", "alpha"}
+set.cmdheight = 1
+vim.wo.number=true
 set.tabstop = 4
 vim.opt.colorcolumn = "80"
 set.softtabstop = 4

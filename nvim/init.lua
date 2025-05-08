@@ -1,4 +1,5 @@
 require("config")
+require("colors")
 require("projects")
 --[[require("config.settings")
 require("config.remap")
